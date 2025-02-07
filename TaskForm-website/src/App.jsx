@@ -1,4 +1,5 @@
 import React from 'react';
+import TaskColumn from './components/TaskColumn';
 
 import "./App.css";
 import TaskForm from './components/taskForm';
@@ -8,7 +9,7 @@ const App = () => {
     <div className='app'>
       <TaskForm />
       <main className='app_main'>
-        <section className='task_column'>Section 1</section>
+        <TaskColumn />
         <section className='task_column'>Section 2</section>
         <section className='task_column'>Section 3</section>
       </main>

@@ -1,14 +1,12 @@
 import React from "react";
-import Todo from "../assets/target.jpg";
 
-const TaskColumn = () => {
-  console.log(Todo);
+import "./TaskColumn.css";
 
+const TaskColumn = (props) => {
   return (
     <section className="task_column">
       <h2 className="task_column_heading">
-        <img className="task_column_icon" src={Todo} alt="" />
-        To do
+        <img className="task_column_icon" src={props.icon} alt="" /> {props.title}
       </h2>
     </section>
   );

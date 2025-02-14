@@ -6,7 +6,7 @@ const TaskForm = () => {
   const [taskData, setTaskData] = useState({
     task: "",
     status: "todo",
-    tags: []
+    tags: [],
   });
 
   const selectTag = (tag) => {

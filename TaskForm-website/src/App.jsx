@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TaskColumn from "./components/TaskColumn";
 import todoIcon from "./assets/target.jpg";
 import doingIcon from "./assets/doing.jpg.webp";
@@ -6,8 +6,15 @@ import doneIcon from "./assets/done.png";
 import "./App.css";
 import TaskForm from "./components/TaskForm";
 
+const oldTasks = localStorage.getItem("tasks");
+console.log(oldTasks);
+
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(oldTasks) || []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleDelete = (taskIndex) => {
     const newTasks = tasks.filter((task, index) => index !== taskIndex);
